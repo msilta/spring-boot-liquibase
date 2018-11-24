@@ -5,9 +5,13 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
-    <include file="db/changelog/common/common.changelog-1.0.xml"/>
-    <include file="db/changelog/mysql/mysql.changelog-1.1.xml"/>
-    <include file="db/changelog/postgres/postgres.changelog-1.2.xml"/>
+    <changeSet id="mysql.changelog-1.1" author="test" dbms="mysql">
+        <createTable tableName="mysql_specific">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
 
 </databaseChangeLog>
 
